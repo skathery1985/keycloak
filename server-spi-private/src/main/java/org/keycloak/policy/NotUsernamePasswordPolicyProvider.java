@@ -44,7 +44,7 @@ public class NotUsernamePasswordPolicyProvider implements PasswordPolicyProvider
 
     @Override
     public PolicyError validate(RealmModel realm, UserModel user, String password) {
-        return validate(user.getUsername(), password);
+        return validate(user.getUsername().toLowerCase(), password.toLowerCase());
     }
 
     @Override
